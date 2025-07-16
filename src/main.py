@@ -31,7 +31,7 @@ data = []
 
 logging.info(f"측정 시작: LabJack {ip}, 채널 {channels}, 간격 {interval}s")
 try:
-    for _ in range(10):
+    for _ in range(500):
         voltages = lj.read_channels(channels)
         timestamp = time.strftime("%Y-%m-%d %H:%M:%S")
         data.append([timestamp] + list(voltages))
